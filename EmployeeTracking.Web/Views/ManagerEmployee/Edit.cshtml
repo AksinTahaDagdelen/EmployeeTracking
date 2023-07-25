@@ -1,0 +1,137 @@
+﻿@model EmployeeTracking.Web.Models.ViewModels.EditEmployeeRequest
+@{
+}
+
+<div class="container py-5">
+    @if (Model != null)
+    {
+        <form method="post">
+            <div class="row">
+                <div style="height:500px" class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body pl-3">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="user-avatar">
+                                        <img src="@Model.ImgUrl" alt="Maxwell Admin" style="height:200px">
+                                    </div> <div class="form-group">
+                                          <label for="note">Name</label>
+                                    <input type="text" id="name" asp-for="Name" class="form-control" id="eMail" placeholder="Enter Company Name">                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">    </div>
+                                    <div class="form-group">
+                                        <label for="note">Surname</label>
+                                        <input type="text" class="form-control" id="surname" asp-for="Surname">
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100 ">
+                        <div class="text-center">
+                            <h6 class="pt-5 text-primary" style="font-size:20px;">Employee Details</h6>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="">
+                                <div class="form-group">
+                                    <label for="fullName">Id</label>
+                                    <input type="text" readonly asp-for="Id" class="form-control" id="fullName">
+                                </div>
+                            </div>
+
+                            <div class="row gutters">
+
+
+                                <div class="w-100">
+                                    <div class="form-group">
+                                        <label for="website">Image URL</label>
+                                        <input type="url" class="form-control w-100" asp-for="ImgUrl" id="website" placeholder="Enter Image URL">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="w-100">
+                                            <div class="form-group">
+                                                <label for="website">Address</label>
+                                                <textarea type="date" class="form-control" id="address" asp-for="Address"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="w-100">
+                                            <div class="form-group">
+
+                                                <label for="website">PhoneNumber</label>
+                                                <input type="text" class="form-control" id="phoneNumber" asp-for="PhoneNumber">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="w-100">
+                                            <div class="form-group">
+                                                <label for="website">Note</label>
+                                                <textarea type="text-area" class="form-control" id="note" asp-for="Note"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="w-100">
+                                            <div class="form-group">
+                                                <label for="website">Salary</label>
+                                                <input type="text" class="form-control" id="salary" asp-for="Salary">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="website">Projects</label>
+                                                <select class="form-select" asp-items="@Model.Projects" asp-for="SelectedProjects"></select>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="website">Departments</label>
+                                                <select class="form-select" asp-items="@Model.Departments" asp-for="SelectedDepartments"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-100">
+                                        <div class="form-group">
+                                            <label for="website">Companies</label>
+                                            <select class="form-select" asp-items="@Model.Companies" asp-for="SelectedCompanies"></select>
+                                        </div>
+                                    </div>
+
+                                   	<div class="row gutters">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="text-right">
+										<button type="submit" id="submit" name="submit" class="btn btn-primary btn-hover">Update</button>
+										<button type="submit" id="submit" name="submit" asp-controller="ManagerEmployee" asp-action="Delete" class="btn btn-danger btn-hover">Delete</button>
+										
+									</div>
+								</div>
+							</div
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    }
+    else
+    {
+
+        <h1>There is no spoon!</h1>
+    }
+
+</div>

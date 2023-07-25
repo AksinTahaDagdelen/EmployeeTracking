@@ -1,0 +1,82 @@
+﻿@model EmployeeTracking.Web.Models.ViewModels.EditProjectRequest
+@{
+}
+
+
+<div class="container py-5">
+    <form method="post">
+		<div class="container">
+			<div class="row gutters">
+				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+					<div class="card h-100 project-edit-box">
+						<div class="card-body">
+							<div class="account-settings">
+								<div class="about">
+									<div class="form-group">
+										<label for="note">Notes</label>
+										<textarea type="text" class="form-control" id="note" asp-for="Note" placeholder="Enter note"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 ">
+					<div class="card h-100 project-edit-box ">
+						<div class="card-body ">
+							<div class="row gutters">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<h6 class="mb-2 text-primary">Project Details</h6>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="fullName">Id</label>
+										<input type="text" readonly asp-for="Id" class="form-control" id="fullName" >
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="eMail">Name</label>
+										<input type="text" id="name" asp-for="Name" class="form-control" id="eMail" placeholder="Enter email ID">
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="website">Image URL</label>
+										<input type="url" class="form-control" asp-for="ImgUrl" id="website" placeholder="Image url">
+									</div>
+								</div>
+							</div>
+							
+							<div class="row gutters">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="text-right">
+										<button type="submit" id="submit" name="submit" class="btn btn-primary btn-hover">Update</button>
+										<button type="submit" id="submit" name="submit" asp-controller="ManagerProject" asp-action="Delete" class="btn btn-danger btn-hover">Delete</button>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+      @*  <div class="mb-3">
+            <label class="form-label">Id</label>
+            <input type="text" class="form-control" id="name" readonly asp-for="Id" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" />
+        </div>
+
+
+
+        <div>
+            <button type="submit" class="btn btn-dark">Update</button>
+            <button type="submit" class="btn btn-danger" asp-controller="ManagerProject" asp-action="Delete">Remove</button>
+        </div>*@
+    </form>
+</div>

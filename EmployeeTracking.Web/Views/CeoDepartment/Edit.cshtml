@@ -1,0 +1,112 @@
+﻿@model EmployeeTracking.Web.Models.ViewModels.EditDepartmentRequest
+@{
+
+}
+
+
+
+<div class="container py-5">
+	<form method="post">
+		<div class="container">
+			<div class="row gutters">
+				<div class=" ">
+					<div class="card h-100 project-edit-box ">
+						<div class="card-body ">
+							<div class="row gutters">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<h6 class="mb-2 text-primary">Department Details</h6>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="fullName">Id</label>
+										<input type="text" readonly asp-for="Id" class="form-control" id="fullName">
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="eMail">Name</label>
+										<input type="text" id="name" asp-for="Name" class="form-control" id="eMail" placeholder="Enter email ID">
+									</div>
+								</div>
+
+								<div class="">
+									<div class="form-group">
+										<label for="website">Image URL</label>
+										<input type="url" class="form-control" asp-for="ImgUrl" id="website" placeholder="Image url">
+									</div>
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Projects </label>
+									<select class="form-select" asp-items="@Model.Projects" asp-for="SelectedProjects"></select>
+								</div>
+							</div>
+
+							<div class="row gutters">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="text-right">
+										<button type="submit" id="submit" name="submit" class="btn btn-primary btn-hover">Update</button>
+										<button type="submit" id="submit" name="submit" asp-controller="CeoDepartment" asp-action="Delete" class="btn btn-danger btn-hover">Delete</button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		@*  <div class="mb-3">
+		<label class="form-label">Id</label>
+		<input type="text" class="form-control" id="name" readonly asp-for="Id" />
+		</div>
+
+		<div class="mb-3">
+		<label class="form-label">Name</label>
+		<input type="text" class="form-control" id="name" asp-for="Name" />
+		</div>
+
+
+
+		<div>
+		<button type="submit" class="btn btn-dark">Update</button>
+		<button type="submit" class="btn btn-danger" asp-controller="ManagerProject" asp-action="Delete">Remove</button>
+		</div>*@
+	</form>
+</div>
+@*<div class="container py-5">
+    @if (Model != null)
+    {
+        <form method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" readonly class="form-control" id="id" asp-for="Id" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" asp-for="Name" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ImgUrl</label>
+                <input type="text-area" class="form-control" id="imgurl" asp-for="ImgUrl" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Projects </label>
+                <select class="form-select" asp-items="@Model.Projects" asp-for="SelectedProjects"></select>
+            </div>
+            <div class="mb-3 d-flex">
+                <button type="submit" class="btn btn-dark ">Update</button>
+
+                <button type="submit" class="btn btn-danger mx-2" asp-controller="CeoDepartment" asp-action="Delete">Delete</button>
+            </div>
+
+        </form>
+    }
+    else
+    {
+
+        <h1>There is no spoon!</h1>
+    }
+
+</div>*@

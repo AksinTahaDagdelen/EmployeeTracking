@@ -1,0 +1,52 @@
+﻿@model List<EmployeeTracking.Web.Models.Domain.Company>
+@{
+}
+<div class="container py-5">
+    @if (Model != null && Model.Any())
+    {
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-2">
+                    <h2 style="font-family: 'Kanit', sans-serif;" class="heading-section text-white">COMPANIES</h2>
+                </div>
+            </div>
+        </div>
+        <table class="table table-dark text-dark">
+            <thead >
+                <tr class="company-heading table-title">
+                    <th></th>
+                    <th>Company Name</th>
+                    <th>Projects</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var company in Model)
+                {
+                    <tr class="table-grown table-title">
+                        <td>
+                            <div class="img img-hover" style="background-image: url(@company.ImgUrl);"></div>
+                        </td>
+                        <td>@company.Name</td>
+                        <td>
+                            @foreach (var project in company.Projects)
+                            {
+                                <span style="font-size:14px" class="badge tag text-white me-1">@project.Name</span>
+                            }
+                        </td>
+                        <td>
+                            <a type="button" asp-controller="CeoCompany" asp-action="Edit" asp-route-id="@company.Id"><span aria-hidden="true"><i style="color:red" class="fa fa-edit ps-5"></i></span></a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h1>There is no spoon :)</h1>
+    }
+
+</div>
